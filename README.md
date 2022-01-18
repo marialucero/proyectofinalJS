@@ -1,0 +1,1 @@
+Proyecto final de JavaScript: consiste en un simulador de pedidos mayoristas. Aquí subiré todos los cambios que se realicen en el proyecto a lo largo de la cursada y para la entrega final. 
