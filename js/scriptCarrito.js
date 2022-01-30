@@ -42,42 +42,27 @@ const arrayLineas = [
     {id: 9, descripcion: "Tapas para empanadas", id_categoria: 3},
     {id: 10, descripcion: "Pascualina", id_categoria: 3}
 ];
-document.addEventListener("DOMContentLoaded", function() {
-    var htmlProductos = document.getElementById("divProductos");
-    htmlProductos.classList = "mb-5";
-    arrayCategorias.forEach(oCategoria => {
-        let categoria = document.createElement("h4");
-        categoria.innerHTML = oCategoria.descripcion;
-        htmlProductos.appendChild(categoria);
-        arrayLineas.filter(oLinea => oLinea.id_categoria == oCategoria.id).forEach(oLinea => {
-            let linea = document.createElement("h5");
-            linea.innerHTML = oLinea.descripcion;
-            htmlProductos.appendChild(linea);
-            let contenedorProductos = document.createElement("div");
-            contenedorProductos.classList = "container";
-            htmlProductos.appendChild(contenedorProductos);
-            let divRow = document.createElement("div");
-            divRow.classList = "row justify-content-center"
-            contenedorProductos.appendChild(divRow);
-            arrayProductos.filter(oProducto => oProducto.id_categoria == oCategoria.id && 
-                                                oProducto.id_linea == oLinea.id).forEach(oProducto => {
-                let cardCol = document.createElement("div");
-                cardCol.classList = "col mb-3 p-0";
-                cardCol.innerHTML = `<div class="card">
-                <img src="${oProducto.imagen}" class="card-img-top" alt="producto">
-                <div class="card-body">
-                  <h6 class="card-title">${oProducto.nombre}</h6>
-                  <p class="card-text ">${oProducto.descripcion}</p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" data-producto="${oProducto.id}" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>`
-                divRow.appendChild(cardCol);
-            });
-        });
-    });
-});
 
+
+let nombre = document.getElementById('inputName');
+let telefono = document.getElementById('inputPhone');
+let email = document.getElementById('inputEmail');
+let direccion = document.getElementById('inputAddress');
+let codigoPostal = document.getElementById('inputZip');
+let medioDePago = document.getElementById('inputMedioDePago');
+
+
+//que levante el pedido seleccionado en el html anterior en el script anterior y luego opere el sistema
+
+
+// let ingreseProductoAComprar = parseInt(prompt("Los productos disponibles para su compra son: \n 1- Artesano Semillas 400g \n 2 - Artesano Original 500g \n 3- Hamburguesa Brioche Artesano 240g. \n 4- Pan para Hamburguesa Artesano 240g \n 5-Pan para Pancho Artesano 240g \n 6- Pan Oroweat Cereales 600g \n Ingrese el número del producto deseado: "));
+// let producto = arrayProductos.find(x => x.id == ingreseProductoAComprar);
+// let cantidadUnidades = parseInt(prompt("Ingrese la cantidad de unidades a comprar")); 
+
+// let precioBruto = producto.precio;  
+// let precioNeto = mas45(iva24(precioBruto)).toFixed(2);
+// let totalNeto = multiplicar(precioNeto,cantidadUnidades).toFixed(2);
+// let precioFinal = iva21(descuento(totalNeto)).toFixed(2);
 
 class Pedido { 
     constructor(nombre,direccion,telefono,email,producto,cantidadUnidades, precioNeto, totalNeto, precioFinal) {
@@ -100,7 +85,9 @@ class Pedido {
     }
 }
 
-
+// const pedido1 = new Pedido(nombre, direccion, telefono, email, producto,cantidadUnidades, precioNeto, totalNeto, precioFinal);
+// arrayPedidos.push(pedido1);
+// console.log(arrayPedidos);
 
 
 

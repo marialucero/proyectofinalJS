@@ -13,7 +13,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/main.css">
-  <title>Pedidos Tres Marías</title>
+  <title>Compras Tres Marías</title>
 </head>
 <body>
   <header>
@@ -48,11 +48,6 @@
                 <a class="nav-link active" href="../pages/servicios.html">Servicios</a>
               </li>
             </ul>
-              <div class="container">
-                <a class="navbar-brand" href="../pages/carrito.html">
-                  <img src="../images/icons/material_filled/carrito-de-compras-30.png" alt="carrito">
-                </a>
-              </div>
           </div>
         </div>
       </nav>
@@ -111,139 +106,86 @@
   </div>
 </div>
 
-<!--Productos para pedir-->
-  <div id = "estructura">
-    <aside id ="menuProductos">
-      <nav id="navbar-example3" class="navbar navbar-dark bg-menuProductos flex-column align-items-stretch p-3 rounded">
-        <a class="navbar-brand" href="#">Líneas de producto</a>
-        <nav class="nav nav-pills flex-column">
-          <a class="nav-link text-light" href="#item-1">Panificados</a>
-          <nav class="nav nav-pills flex-column border-bottom">
-            <a class="nav-link ms-3 my-1 text-light" href="#item-1-1">Línea artesano</a>
-            <a class="nav-link ms-3 my-1 text-light" href="#item-1-2">Blancos</a>
-            <a class="nav-link ms-3 my-1 text-light" href="#item-1-3">Salvados</a>
-            <a class="nav-link ms-3 my-1 text-light" href="#item-1-4">Integrales</a>
-          </nav>
-          <a class="nav-link text-light" href="#item-2">Dulces</a>
-            <nav class="nav nav-pills flex-column border-bottom">
-              <a class = "nav-link ms-3 my-1 text-light" href="#item2-1">Madalenas</a>
-              <a class = "nav-link ms-3 my-1 text-light" href="#item2-2">Budines</a>
-              <a class = "nav-link ms-3 my-1 text-light" href="#item2-3">Vainillas</a>
-            </nav>
-          <a class="nav-link text-light" href="#item-3" id="hoverNavbar">Frío</a>
-            <nav class="nav nav-pills flex-column border-bottom ">
-              <a class="nav-link ms-3 my-1 text-light" href="#item-3-1">Tapas para empanadas</a>
-              <a class="nav-link ms-3 my-1 text-light" href="#item-3-2">Pascualina</a>
-            </nav>
-          <a class="nav-link text-light bg-transparent" href="#item-4">Snacks</a>
-        </nav>
-      </nav>
-    </aside>
-    <section id="productos">
-      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0" id="divProductos">
-        <!-- <h4 id="item-1">Panificados</h4>
-        <h5 id="item-1-1">Línea artesano</h5>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/artesano500g.png" class="card-img-top" alt="artesano500g">
-                <div class="card-body">
-                  <h6 class="card-title">Artesano Original 500g</h6>
-                  <p class="card-text ">Pan Blanco de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/artesano400g.png" class="card-img-top" alt="artesano400g">
-                <div class="card-body">
-                  <h6 class="card-title">Artesano Original 400g</h6>
-                  <p class="card-text ">Pan Blanco con Semillas de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/panchoartesano.png" class="card-img-top" alt="panchoartesano">
-                <div class="card-body">
-                  <h6 class="card-title">Pan para Pancho Artesano 240g</h6>
-                  <p class="card-text ">Pan para Pancho de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/hamburguesaartesano.png" class="card-img-top" alt="hamburguesaartesano">
-                <div class="card-body">
-                  <h6 class="card-title">Pan para Hamburguesa Artesano 240g</h6>
-                  <p class="card-text ">Pan para Hamburguesa de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class=" text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/artesanobrioche.png" class="card-img-top" alt="artesanobrioche">
-                <div class="card-body">
-                  <h6 class="card-title">Pan para Hamburguesa Brioche 240g</h6>
-                  <p class="card-text ">Pan para Hamburguesa de la línea Artesano Brioche de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+<!--Input-->
+
+<div class="container mt-3">    
+    <form class="row g-3">
+        <div class="col-md-4">
+          <label for="inputName" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="col-md-4">
+          <label for="inputEmail" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="col-md-4">
+          <label for="inputPhone" class="form-label">Número de celular</label>
+          <input type="number" class="form-control" id="inputPhone" placeholder="11 1234 1234">
+        </div>
+        <div class="col-md-6">
+          <label for="inputAddress" class="form-label">Dirección del local</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Av. Santa Fe 2000">
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Código postal</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        <div class="col-md-4">
+          <label for="inputMedioDePago" class="form-label">Medio de pago: únicamente contra-entrega
+          <select id="inputMedioDePago" class="form-select">
+            <option selected >Mercado Pago</option>
+            <option>Efectivo</option>
+          </select>
+        </label>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">Confirmo que los datos ingresados son correctos</label>
           </div>
         </div>
-        <div class="container">
-          <h5 id="item-1-2 m">Blancos</h5>
-          <div class="card">
-            <img src="../images/productos_accordion/productos/panificados/lacteadogrande.png" class="card-img-top" alt="artesano500g">
-            <div class="card-body">
-              <h6 class="card-title">Fargo Lacteado 550g</h6>
-              <p class="card-text">Pan Blanco de la línea Lacteado de Bimbo </p>
-              <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-              </button>
-            </div>
-          </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-personalizado text-light">Siguiente</button>
         </div>
-        <h5 id="item-1-3">Salvados</h5>
-        <p>...</p>
-        <h5 id="item-1-4">Integrales</h5>
-        <h4 id="item-2">Dulces</h4>
-        <p>...</p>
-        <h5 id="item-2-1">Madalenas</h5>
-        <p>...</p>
-        <h5 id="item-2-2">Budines</h5>
-        <p>...</p>
-        <h5 id="item-2-3">Vainillas</h5>
-        <p>...</p>
-        <h4 id="item-3">Frío</h4>
-        <p>...</p>
-        <h5 id="item-3-1">Tapas para empanadas</h5>
-        <p>...</p>
-        <h5 id="item-3-2">Pascualina</h5>
-        <p>...</p>
-        <h4 id="item-4">Snacks</h4>
-        <p>...</p> -->
-      </div>
-    </section>
-  </div>
-  
-  
+    </form>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--Pie de página-->
   <footer>
     <!--Medium, large y xxl-->
@@ -316,7 +258,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
   integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
   crossorigin="anonymous"></script>
+
+
 <!--JS personalizado-->
-  <script src="../js/script.js"></script>
+  <script src="../js/scriptCarrito.js"></script>
 </body>
 </html>

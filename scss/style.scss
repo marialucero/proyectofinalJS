@@ -30,7 +30,11 @@ p {
     word-spacing: 2px;
     margin-bottom:5px;
 }
-/*Títulos*/
+/*Bootstrap: botones*/
+.btn-card {
+    background-color:$red-border-color;
+    color: white;
+}
 
 /*Inicio*/
 #home {
@@ -247,6 +251,77 @@ h2#title {
     padding: 0 20px;
     margin: 0px;
     align-self: center;
+}
+/*Carrito.html*/
+#input {
+    display: grid;
+    grid-template-columns: 80%;
+}
+.btn-personalizado {
+    background-color: $red-border-color;
+    
+}
+
+/*Bootstrap carrito*/
+
+
+
+
+/* Pedidos.html */
+#estructura {
+    display: grid;
+    grid-template-areas: 
+    "menuProductos productos"
+    "footer footer";
+    grid-template-columns: auto 80%;
+    grid-template-rows: auto auto;
+    grid-row-gap: 1vh;
+    grid-column-gap: 3vh;
+    height: max-content;
+    justify-content: center;
+    aside#menuProductos { 
+        grid-area: menuProductos;
+        justify-self:self-start;
+    }
+    section#productos {
+    grid-area: productos;
+    }
+}
+
+
+
+
+
+
+
+/*Bootstrap de pedidos*/
+.card {
+    width: 13rem; 
+    height: 100%;
+}
+.bg-menuProductos {
+    background-color: $blue-background-color;
+}
+.nav-link {
+    color: white;
+}
+.card-text {
+    font-size: $fuente-card-productos;
+}
+.btn-card {
+    font-size: $fuente-card-productos;
+    background-color: $red-border-color;
+    bottom: 0;
+
+}
+.card-body {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.bgRedColor { 
+    background-color: $red-border-color;
 }
 
 /*Estilos de fuentes*/
