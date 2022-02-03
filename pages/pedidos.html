@@ -20,47 +20,84 @@
       <a href="../index.html"><img src="../images/tresmariascuatro.png" alt="imagen" class="animacionLogo"/></a>
       <h1 class="display-6">Pedidos</h1>
   </header>
+
   <!--Menú desktop-->
   <div class="d-none d-lg-block">
-    <div class="container-fluid d-flex justify-content-evenly bgNav mb-2 border-bottom border-2">
-      <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid ">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../pages/pedidos.html">Pedidos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../pages/quienes_somos.html">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../pages/productos.html">Productos</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link active" href="../pages/servicios.html">Servicios</a>
-              </li>
-            </ul>
-              <div class="container">
-                <a class="navbar-brand" href="../pages/carrito.html">
-                  <img src="../images/icons/material_filled/carrito-de-compras-30.png" alt="carrito">
-                </a>
-              </div>
+    <div class="container-fluid bgNav border-bottom border-2">
+      <div class="row justify-content-center">
+        <div class="col p-0 m-0"></div>
+        <div class="col d-flex justify-content-center">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/pedidos.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/quienes_somos.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/productos.html">Productos</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link active" href="../pages/servicios.html">Servicios</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center align-content-center p-0 m-0">
+              <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <img src="../images/icons/material_filled/carrito-de-compras-30.png" class="imgCarrito" alt="carrito">
+              </button>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
+    
   </div>
+  <!-- <div class="container-fluid d-flex justify-content-evenly bgNav mb-2 border-bottom border-2">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-fluid ">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../pages/pedidos.html">Pedidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../pages/quienes_somos.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../pages/productos.html">Productos</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="../pages/servicios.html">Servicios</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div> -->
   <!--Menú mobile-->
   <div class="d-md-block d-lg-none d-xl-none d-xxl-none">
-    <div class="container-fluid d-flex  bgNav mb-2 border-bottom border-2">
+    <div class="container-fluid d-flex bgNav mb-2 border-bottom border-2">
       <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid ">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -82,7 +119,7 @@
               <li class="nav-item">
                 <a class="nav-link active" href="../pages/productos.html">Productos</a>
               </li>
-              <li class="nav-item ">
+              <li class="nav-item">
                 <a class="nav-link active" href="../pages/servicios.html">Servicios</a>
               </li>
             </ul>
@@ -91,9 +128,10 @@
       </nav>
     </div>
   </div>
+
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Cantidad de unidades</h5>
@@ -101,7 +139,7 @@
       </div>
       <div class="modal-body">
         <label for="unidades">Indique la cantidad de unidades del producto:
-        <input class="mt-1" type="number" id="unidades" name="unidades" placeholder="Unidades"></label>
+        <input class="mt-1" type="number" id="cantidadUnidades" name="unidades" placeholder="Unidades"></label>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelar">Cancelar</button>
@@ -111,8 +149,8 @@
   </div>
 </div>
 
-<!--Productos para pedir-->
-  <div id = "estructura">
+<!--Productos para pedir: estructura de la tienda-->
+  <div id = "estructura" class="mt-2">
     <aside id ="menuProductos">
       <nav id="navbar-example3" class="navbar navbar-dark bg-menuProductos flex-column align-items-stretch p-3 rounded">
         <a class="navbar-brand" href="#">Líneas de producto</a>
@@ -141,108 +179,45 @@
     </aside>
     <section id="productos">
       <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0" id="divProductos">
-        <!-- <h4 id="item-1">Panificados</h4>
-        <h5 id="item-1-1">Línea artesano</h5>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/artesano500g.png" class="card-img-top" alt="artesano500g">
-                <div class="card-body">
-                  <h6 class="card-title">Artesano Original 500g</h6>
-                  <p class="card-text ">Pan Blanco de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/artesano400g.png" class="card-img-top" alt="artesano400g">
-                <div class="card-body">
-                  <h6 class="card-title">Artesano Original 400g</h6>
-                  <p class="card-text ">Pan Blanco con Semillas de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/panchoartesano.png" class="card-img-top" alt="panchoartesano">
-                <div class="card-body">
-                  <h6 class="card-title">Pan para Pancho Artesano 240g</h6>
-                  <p class="card-text ">Pan para Pancho de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/hamburguesaartesano.png" class="card-img-top" alt="hamburguesaartesano">
-                <div class="card-body">
-                  <h6 class="card-title">Pan para Hamburguesa Artesano 240g</h6>
-                  <p class="card-text ">Pan para Hamburguesa de la línea Artesano de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class=" text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="../images/productos_accordion/productos/panificados/artesanobrioche.png" class="card-img-top" alt="artesanobrioche">
-                <div class="card-body">
-                  <h6 class="card-title">Pan para Hamburguesa Brioche 240g</h6>
-                  <p class="card-text ">Pan para Hamburguesa de la línea Artesano Brioche de Bimbo </p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <h5 id="item-1-2 m">Blancos</h5>
-          <div class="card">
-            <img src="../images/productos_accordion/productos/panificados/lacteadogrande.png" class="card-img-top" alt="artesano500g">
-            <div class="card-body">
-              <h6 class="card-title">Fargo Lacteado 550g</h6>
-              <p class="card-text">Pan Blanco de la línea Lacteado de Bimbo </p>
-              <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <a href="#" class="text-light" id="añadirAlPedido">Añadir al pedido</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <h5 id="item-1-3">Salvados</h5>
-        <p>...</p>
-        <h5 id="item-1-4">Integrales</h5>
-        <h4 id="item-2">Dulces</h4>
-        <p>...</p>
-        <h5 id="item-2-1">Madalenas</h5>
-        <p>...</p>
-        <h5 id="item-2-2">Budines</h5>
-        <p>...</p>
-        <h5 id="item-2-3">Vainillas</h5>
-        <p>...</p>
-        <h4 id="item-3">Frío</h4>
-        <p>...</p>
-        <h5 id="item-3-1">Tapas para empanadas</h5>
-        <p>...</p>
-        <h5 id="item-3-2">Pascualina</h5>
-        <p>...</p>
-        <h4 id="item-4">Snacks</h4>
-        <p>...</p> -->
       </div>
     </section>
   </div>
+
+
+
+
+<!--Posible offcanvas para el carrito-->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Imprimir pedido
+      </div>
+      <div class="mt-3">
+        <a href="../pages/carrito.html">
+        <button class="btn btn-personalizado text-light" type="button" id="MenuButton" data-bs-toggle="link"> Finalizar pedido
+        </button></a>
+      </div>
+    </div>
+  </div>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 <!--Pie de página-->
   <footer>

@@ -7,6 +7,7 @@ const descuento = y => y*0.9;
 const iva21 = x => x*1.21; 
 const mas45 = k => k*1.45;
 
+
 const arrayPedidos = [];
 const arrayProductos = [
     {id:1, nombre: "Artesano Semillas 400g", descripcion: "Pan Blanco con Semillas de la línea Artesano de Bimbo", imagen: "../images/productos_accordion/productos/panificados/artesano400g.png", precio: 138.90, id_categoria: 1, id_linea: 1},
@@ -42,6 +43,12 @@ const arrayLineas = [
     {id: 9, descripcion: "Tapas para empanadas", id_categoria: 3},
     {id: 10, descripcion: "Pascualina", id_categoria: 3}
 ];
+
+let precioBruto = arrayProductos.precio;  
+let precioNeto = mas45(iva24(precioBruto)).toFixed(2);
+let totalNeto = multiplicar(precioNeto,cantidadUnidades).toFixed(2);
+let precioFinal = iva21(descuento(totalNeto)).toFixed(2);
+
 document.addEventListener("DOMContentLoaded", function() {
     var htmlProductos = document.getElementById("divProductos");
     htmlProductos.classList = "mb-5";
@@ -59,17 +66,17 @@ document.addEventListener("DOMContentLoaded", function() {
             let divRow = document.createElement("div");
             divRow.classList = "row justify-content-center"
             contenedorProductos.appendChild(divRow);
-            arrayProductos.filter(oProducto => oProducto.id_categoria == oCategoria.id && 
-                                                oProducto.id_linea == oLinea.id).forEach(oProducto => {
+            arrayProductos.filter(oProducto => oProducto.id_linea == oLinea.id).forEach(oProducto => {
                 let cardCol = document.createElement("div");
                 cardCol.classList = "col mb-3 p-0";
                 cardCol.innerHTML = `<div class="card">
                 <img src="${oProducto.imagen}" class="card-img-top" alt="producto">
                 <div class="card-body">
                   <h6 class="card-title">${oProducto.nombre}</h6>
+                  <h6>$ ${oProducto.precio}</h6>
                   <p class="card-text ">${oProducto.descripcion}</p>
-                  <button type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" data-producto="${oProducto.id}" id="añadirAlPedido">Añadir al pedido</a>
+                  <button id="btnAdd" type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <a href="#" class="text-light" data-producto="${oProducto.id}" id="añadirPedido">Añadir al pedido</a>
                   </button>
                 </div>`
                 divRow.appendChild(cardCol);
@@ -78,29 +85,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Storage
 
-class Pedido { 
-    constructor(nombre,direccion,telefono,email,producto,cantidadUnidades, precioNeto, totalNeto, precioFinal) {
-        this.nombre = nombre; 
-        this.direccion = direccion; 
-        this.telefono = telefono; 
-        this.email = email;
-        this.producto = producto
-        this.cantidadUnidades = cantidadUnidades;
-        this.precioNeto = precioNeto;
-        this.totalNeto = totalNeto;
-        this.precioFinal = precioFinal; 
-    }
-    factura() {
-        console.log(
-        "Datos de facturación y envío: ", "\n", "Nombre: "+ this.nombre+ "\n"+ " Dirección: "+ this.direccion+"\n"+ "Sus datos de contacto son: "+ "\n "+ this.telefono+ "\n "+ this.email + "\n"+
-            "Datos del pedido: ", "\n", "Unidades "+ this.cantidadUnidades + "\n"+ "Precio neto por unidad $" + this.precioNeto + "\n "+ "Precio neto total $" + this.totalNeto + "\n"+" Total final con IVA 21% $" + this.precioFinal + "\n"+
-            "Su pedido se encuentra realizado, en breve nos comunicaremos con usted"
-        );
-    }
-}
+let btnAdd = document.getElementsById('btnAdd'); 
 
-
-
+btnAdd.addEventListener( "click", () => {
+    let productoElegido = document.getElementById('añadirPedido').value;
+    localStorage.setItem('valorEnLs', productoElegido);
+    document.getElementById('añadirPedido').value = "";
+});
 
 
