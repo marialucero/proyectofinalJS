@@ -75,24 +75,51 @@ document.addEventListener("DOMContentLoaded", function() {
                   <h6 class="card-title">${oProducto.nombre}</h6>
                   <h6>$ ${oProducto.precio}</h6>
                   <p class="card-text ">${oProducto.descripcion}</p>
-                  <button id="btnAdd" type="button" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" data-producto="${oProducto.id}" id="añadirPedido">Añadir al pedido</a>
+                  <button type="button" data-producto="${oProducto.id}" class="btn btn-card btn-producto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <a href="#" class="text-light" id="añadirPedido">Añadir al pedido</a>
                   </button>
                 </div>`
                 divRow.appendChild(cardCol);
             });
         });
     });
+    let btnAdd = document.getElementsByClassName('btn-producto');
+    for(let i = 0; i < btnAdd.length; i++){
+        var element = btnAdd[i];
+        element.addEventListener("click", function(){
+            let productoElegido = this.dataset.producto;
+            $('#hid-producto').val(productoElegido);
+            $('#cantidadUnidades').val("");
+        });
+    }
 });
 
 // Storage
-
-let btnAdd = document.getElementsById('btnAdd'); 
-
-btnAdd.addEventListener( "click", () => {
-    let productoElegido = document.getElementById('añadirPedido').value;
-    localStorage.setItem('valorEnLs', productoElegido);
-    document.getElementById('añadirPedido').value = "";
+$('#añadirAlCarrito').click(function (){
+    let carrito = localStorage.getItem("cartItems");
+    if (carrito == null || carrito == undefined)
+        carrito = [];
+    else
+        carrito = JSON.parse(carrito);
+    debugger;
+    let itemCarrito = {};
+    let idProducto = $('#hid-producto').val();
+    let cantidadPedida = $('#cantidadUnidades').val();
+    itemCarrito.producto = arrayProductos.find(x => x.id == idProducto);
+    itemCarrito.cantidad = cantidadPedida;
+    if (carrito.find(x => x.producto.id == idProducto)) {
+        showModalMensajes("Error", 'El producto ya existe en el carrito');
+    }
+    else {
+        carrito.push(itemCarrito);
+        localStorage.setItem("cartItems", JSON.stringify(carrito));
+        $("#staticBackdrop").modal('hide');
+        showModalMensajes("Éxito", 'El producto ha sido agregado al carrito exitosamente');
+    }
 });
 
-
+function showModalMensajes(titulo, mensaje) {    
+    $("#tituloModal").text(titulo);
+    $("#mensajeModal").text(mensaje);
+    $("#modalMensajes").modal('toggle');
+}
