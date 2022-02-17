@@ -7,107 +7,88 @@ const descuento = y => y*0.9;
 const iva21 = x => x*1.21; 
 const mas45 = k => k*1.45;
 
+const urlProductosJSON = "../datos/productos.json";
+const urlCategoriasJSON = "../datos/categorias.json";
+const urlLineasJSON = "../datos/lineas.json";
 
 const arrayPedidos = [];
-const arrayProductos = [
-    {id:1, nombre: "Artesano Semillas 400g", descripcion: "Pan Blanco con Semillas de la línea Artesano de Bimbo", imagen: "../images/productos_accordion/productos/panificados/artesano400g.png", precio: 138.90, id_categoria: 1, id_linea: 1},
-    {id:2, nombre: "Artesano Original 500g", descripcion: "Pan Blanco de la línea Artesano de Bimbo", imagen: "../images/productos_accordion/productos/panificados/artesano500g.png", precio: 137.10, id_categoria: 1, id_linea: 1},
-    {id:3, nombre: "Pan para Hamburguesa Artesano 240g", descripcion: "Pan para Hamburguesa de la línea Artesano de Bimbo", imagen: "../images/productos_accordion/productos/panificados/hamburguesaartesano.png", precio:82.10, id_categoria: 1, id_linea: 1},
-    {id:4, nombre: "Pan para Pancho Artesano 240g", descripcion: "Pan para Pancho de la línea Artesano de Bimbo", imagen: "../images/productos_accordion/productos/panificados/panchoartesano.png", precio:82.10, id_categoria: 1, id_linea: 1},
-    {id:5, nombre: "Hamburguesas Brioche Artesano 240g", descripcion: "Pan para Hamburguesa de la línea Artesano Brioche de Bimbo", imagen: "../images/productos_accordion/productos/panificados/artesanobrioche.png", precio:96.10, id_categoria: 1, id_linea: 1},
-    {id:6, nombre: "Fargo Lacteado 550g", descripcion: "Pan Blanco Grande de la línea Lacteado de Fargo", imagen: "../images/productos_accordion/productos/panificados/lacteadogrande.png", precio: 0, id_categoria: 1, id_linea:2},
-    {id:7, nombre: "Fargo Lacteado 440g", descripcion: "Pan Blanco Chico de la línea Lacteado de Fargo", imagen: "../images/productos_accordion/productos/panificados/lacteadochico.png", precio: 0, id_categoria: 1, id_linea:2},
-    {id:8, nombre: "Mesa Lactal 500g", descripcion: "Pan Blanco Grande de la línea Mesa de Lactal", imagen: "../images/productos_accordion/productos/panificados/mesalactalgrande.png", precio: 0, id_categoria: 1, id_linea:2},
-    {id:9, nombre: "Mesa Lactal 300g", descripcion: "Pan Blanco Chico de la línea Mesa de Lactal", imagen: "../images/productos_accordion/productos/panificados/mesachicolactal.png", precio: 0, id_categoria: 1, id_linea:2},
-    {id:10, nombre: "Mix Cereal 430g", descripcion: "Pan Blanco Chico con Semillas de la línea Mix Cereal de Fargo", imagen: "../images/productos_accordion/productos/panificados/mixcereal.png", precio: 0, id_categoria: 1, id_linea:2},
-    {id: 11, nombre:"Salvado Plus 630g", descripcion: "Pan Salvado de la línea Salvado Plus de Fargo", imagen: "../images/productos_accordion/productos/panificados/salvadodoble.png",precio: 0, id_categoria:1, id_linea:3},
-    {id:11, nombre: "Pan Oroweat Cereales 600g", descripcion: "Pan con Cereales de la línea Oroweat", imagen: "../images/productos_accordion/productos/panificados/oroweatcereales.png", precio:195.40, id_categoria: 1, id_linea: 4},
-    {id:12, nombre: "Pan Oroweat Semillas 600g", descripcion: "Pan con Semillas de la línea Oroweat", imagen: "../images/productos_accordion/productos/panificados/oroweatsemillas.png", precio:195.40, id_categoria: 1, id_linea: 4}
 
-];
-const arrayCategorias = [
-    {id: 1, descripcion: "Panificados"},
-    {id: 2, descripcion: "Dulces"},
-    {id: 3, descripcion: "Fríos"},
-    {id: 4, descripcion: "Snacks"}
-];
-const arrayLineas = [
-    {id: 1, descripcion: "Línea artesano", id_categoria: 1},
-    {id: 2, descripcion: "Blancos", id_categoria: 1},
-    {id: 3, descripcion: "Salvados", id_categoria: 1},
-    {id: 4, descripcion: "Integrales", id_categoria: 1},
-    {id: 5, descripcion: "Pancho y Hamburguesa", id_categoria:1},
-    {id: 6, descripcion: "Madalenas", id_categoria: 2},
-    {id: 7, descripcion: "Budines", id_categoria: 2},
-    {id: 8, descripcion: "Vainillas", id_categoria: 2},
-    {id: 9, descripcion: "Tapas para empanadas", id_categoria: 3},
-    {id: 10, descripcion: "Pascualina", id_categoria: 3}
-];
+// API
+function getProductos(){
+    return getListas(urlProductosJSON);
+}
+function getCategorias(){
+    return getListas(urlCategoriasJSON);
+}
+function getLineas(){
+   return getListas(urlLineasJSON);
+}
 
-let precioBruto = arrayProductos.precio;  
-let precioNeto = mas45(iva24(precioBruto)).toFixed(2);
-let totalNeto = multiplicar(precioNeto,cantidadUnidades).toFixed(2);
-let precioFinal = iva21(descuento(totalNeto)).toFixed(2);
+function getListas(url){
+    return $.getJSON(url);
+}
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     var htmlProductos = document.getElementById("divProductos");
     htmlProductos.classList = "mb-5";
-    arrayCategorias.forEach(oCategoria => {
-        let categoria = document.createElement("h4");
-        categoria.innerHTML = oCategoria.descripcion;
-        htmlProductos.appendChild(categoria);
-        arrayLineas.filter(oLinea => oLinea.id_categoria == oCategoria.id).forEach(oLinea => {
-            let linea = document.createElement("h5");
-            linea.innerHTML = oLinea.descripcion;
-            htmlProductos.appendChild(linea);
-            let contenedorProductos = document.createElement("div");
-            contenedorProductos.classList = "container";
-            htmlProductos.appendChild(contenedorProductos);
-            let divRow = document.createElement("div");
-            divRow.classList = "row justify-content-center"
-            contenedorProductos.appendChild(divRow);
-            arrayProductos.filter(oProducto => oProducto.id_linea == oLinea.id).forEach(oProducto => {
-                let cardCol = document.createElement("div");
-                cardCol.classList = "col mb-3 p-0";
-                cardCol.innerHTML = `<div class="card">
-                <img src="${oProducto.imagen}" class="card-img-top" alt="producto">
-                <div class="card-body">
-                  <h6 class="card-title">${oProducto.nombre}</h6>
-                  <h6>$ ${oProducto.precio}</h6>
-                  <p class="card-text ">${oProducto.descripcion}</p>
-                  <button type="button" data-producto="${oProducto.id}" class="btn btn-card btn-producto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a href="#" class="text-light" id="añadirPedido">Añadir al pedido</a>
-                  </button>
-                </div>`
-                divRow.appendChild(cardCol);
+    getCategorias().done(function (arrayCategorias) {
+        arrayCategorias.forEach(oCategoria => {
+            let categoria = document.createElement("h4");
+            categoria.innerHTML = oCategoria.descripcion;
+            categoria.id = "categoria-" + oCategoria.id;
+            htmlProductos.appendChild(categoria);
+            getLineas().done(function (arrayLineas) {
+                arrayLineas.filter(oLinea => oLinea.id_categoria == oCategoria.id).forEach(oLinea => {
+                    let item = $("#categoria-" + oLinea.id_categoria);
+                    let linea = document.createElement("h5");
+                    linea.innerHTML = oLinea.descripcion;
+                    item.append(linea);
+                    let contenedorProductos = document.createElement("div");
+                    contenedorProductos.classList = "container";
+                    linea.append(contenedorProductos);
+                    let divRow = document.createElement("div");
+                    divRow.classList = "row justify-content-center"
+                    contenedorProductos.appendChild(divRow);
+                    getProductos().done(function (arrayProductos) {
+                        arrayProductos.filter(oProducto => oProducto.id_linea == oLinea.id).forEach(oProducto => {
+                            let cardCol = document.createElement("div");
+                            cardCol.classList = "col mb-3 p-0";
+                            cardCol.innerHTML = `<div class="card">
+                            <img src="${oProducto.imagen}" class="card-img-top" alt="producto">
+                            <div class="card-body">
+                              <h6 class="card-title">${oProducto.nombre}</h6>
+                              <h6>$ ${oProducto.precio}</h6>
+                              <p class="card-text ">${oProducto.descripcion}</p>
+                              <button type="button" data-producto="${oProducto.id}" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="setValuesModal(this);">
+                                <a href="#" class="text-light" id="añadirPedido">Añadir al pedido</a>
+                              </button>
+                            </div>`
+                            divRow.appendChild(cardCol);
+                        });
+                    });
+                });
             });
         });
-    });
-    let btnAdd = document.getElementsByClassName('btn-producto');
-    for(let i = 0; i < btnAdd.length; i++){
-        var element = btnAdd[i];
-        element.addEventListener("click", function(){
-            let productoElegido = this.dataset.producto;
-            $('#hid-producto').val(productoElegido);
-            $('#cantidadUnidades').val("");
-        });
-    }
+    });  
 });
 
-// Storage
+function setValuesModal(obj){
+    let productoElegido = obj.dataset.producto;
+    $('#hid-producto').val(productoElegido);
+    $('#cantidadUnidades').val("");
+}
+
+
+// Storage y carrito
 $('#añadirAlCarrito').click(function (){
-    let carrito = localStorage.getItem("cartItems");
-    if (carrito == null || carrito == undefined)
-        carrito = [];
-    else
-        carrito = JSON.parse(carrito);
-    debugger;
+    let carrito = getCarrito();
     let itemCarrito = {};
     let idProducto = $('#hid-producto').val();
     let cantidadPedida = $('#cantidadUnidades').val();
-    itemCarrito.producto = arrayProductos.find(x => x.id == idProducto);
+    debugger;
+    itemCarrito.producto = idProducto;
     itemCarrito.cantidad = cantidadPedida;
-    if (carrito.find(x => x.producto.id == idProducto)) {
+    if (carrito.find(x => x.producto == idProducto)) {
         showModalMensajes("Error", 'El producto ya existe en el carrito');
     }
     else {
@@ -123,3 +104,80 @@ function showModalMensajes(titulo, mensaje) {
     $("#mensajeModal").text(mensaje);
     $("#modalMensajes").modal('toggle');
 }
+
+function getCarrito() {
+    let carrito = localStorage.getItem("cartItems");
+    if (carrito == null || carrito == undefined)
+        carrito = [];
+    else
+        carrito = JSON.parse(carrito);
+    return carrito;
+}
+
+function loadCarrito() {
+    $("#carritoBody").empty();
+    let carrito = getCarrito();
+    let contador = 0;
+    if (carrito.length > 0) {
+        let valorCarrito = 0;
+        carrito.forEach(itemCarrito => {
+            getProductos().done(function (productos) {
+                let producto = productos.find(x => x.id == itemCarrito.producto);
+                contador++;
+                let divItemCarrito = document.createElement("div");
+                divItemCarrito.innerHTML = `<div class="row" id="producto-${producto.id}}">
+                            <div class="col-4">
+                                <img src="${producto.imagen}" height="100" width="100" alt="producto-${producto.id}">
+                                <p>${producto.nombre}</p>
+                            </div>
+                            <div class="row col-8">
+                                <div class="col-3" style="text-align: center;margin-top: 80px;">$${producto.precio}</div>
+                                <div class="col-3" style="text-align: center;margin-top: 80px;">${itemCarrito.cantidad}</div>
+                                <div class="col-6" style="text-align: center;margin-top: 75px;">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-secondary" data-producto="${producto.id}" onclick="deleteProducto(this);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary" data-producto="${producto.id}" onclick="editProducto(this);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>`;
+                $("#carritoBody").append(divItemCarrito);
+                valorCarrito += producto.precio * itemCarrito.cantidad;
+                if (contador == carrito.length){
+                    $("#carritoPrecio").show();
+                    let pCarritoPrecio = document.createElement("p");
+                    pCarritoPrecio.innerHTML = "<strong>TOTAL: $ " + valorCarrito + "</strong>";
+                    $("#carritoPrecio").append(pCarritoPrecio);
+                    $("#pedidoButton").removeAttr("disabled");
+                    $("#linkPedidoButton").attr("href", "../pages/carrito.html");
+                }
+            });
+        });
+    }
+    else {
+        let pCarritoVacio = document.createElement("p");
+        pCarritoVacio.innerHTML = "El carrito está vacío, añadí productos para realizar tu pedido";
+        $("#carritoBody").append(pCarritoVacio);
+        $("#carritoPrecio").hide();
+        $("#pedidoButton").attr("disabled", "disabled");
+        $("#linkPedidoButton").attr("href", "#");
+    }
+}
+
+
+
+
+
+
+
+

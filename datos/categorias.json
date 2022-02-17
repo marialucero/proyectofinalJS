@@ -1,0 +1,6 @@
+[
+    {"id": 1, "descripcion": "Panificados"},
+    {"id": 2, "descripcion": "Dulces"}, 
+    {"id": 3, "descripcion": "Fríos"}, 
+    {"id": 4, "descripcion": "Snacks"}
+]
