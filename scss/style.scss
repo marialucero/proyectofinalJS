@@ -262,12 +262,35 @@ h2#title {
     
 }
 
-/*Bootstrap carrito*/
+/* carrito.html */
+#formulario {
+    h5{
+        margin-left: 20px;
+        
+    }
+}
+// #orden {
+//     display: grid;
+//     grid-template-areas:
+//     "formulario pedidoCarrito" 
+//     "footer footer";
+//     grid-template-columns: auto auto;
+//     grid-template-rows: auto;
+//     grid-column-gap: 2vh;
+//     section#formulario { 
+//         grid-area: formulario;
+//         margin-left: 1vh;
+//     }
+//     aside#pedidoCarrito {
+//         grid-area: pedidoCarrito;
+//     }
+
+
+// }
 
 
 
-
-/* Pedidos.html */
+/* pedidos.html */
 #estructura {
     display: grid;
     grid-template-areas: 

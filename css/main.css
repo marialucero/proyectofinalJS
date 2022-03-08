@@ -298,8 +298,11 @@ h2#title {
 .btn-personalizado {
   background-color: #D92929; }
 
-/*Bootstrap carrito*/
-/* Pedidos.html */
+/* carrito.html */
+#formulario h5 {
+  margin-left: 20px; }
+
+/* pedidos.html */
 #estructura {
   display: grid;
   grid-template-areas: "menuProductos productos" "footer footer";

@@ -1,11 +1,12 @@
-// Simulador para calcular el precio final de un pedido junto con los datos del cliente: 
-const suma = (num1, num2)=> num1+num2;
-const resta = (num1, num2) => num1-num2;
-const multiplicar = (num1,num2) => num1*num2;
+
+const max = 1000;
+const min = 100;
+const arrayPedidos = [];
 
 const urlProductosJSON = "../datos/productos.json";
 const urlCategoriasJSON = "../datos/categorias.json";
 const urlLineasJSON = "../datos/lineas.json";
+
 
 // API
 async function getProductosAsync() {
@@ -26,90 +27,10 @@ async function getDatosAsync(url){
     return lista;
 }
 
-document.addEventListener("DOMContentLoaded", async function() {
-    var htmlProductos = document.getElementById("divProductos");
-    htmlProductos.classList = "mb-5";
-    getCategoriasAsync().then(categorias => {
-        categorias.forEach(oCategoria => {
-            let categoria = document.createElement("h4");
-            categoria.innerHTML = oCategoria.descripcion;
-            categoria.id = "categoria-" + oCategoria.id;
-            htmlProductos.appendChild(categoria);
-            getLineasAsync().then(lineas => {
-                lineas.filter(oLinea => oLinea.id_categoria == oCategoria.id).forEach(oLinea => {
-                    let item = $("#categoria-" + oLinea.id_categoria);
-                    let linea = document.createElement("h5");
-                    linea.innerHTML = oLinea.descripcion;
-                    linea.id = "item-" + oLinea.id_categoria + "-" + oLinea.id;
-                    item.append(linea);
-                    let contenedorProductos = document.createElement("div");
-                    contenedorProductos.classList = "container";
-                    item.append(contenedorProductos);
-                    let divRow = document.createElement("div");
-                    divRow.classList = "row justify-content-center"
-                    contenedorProductos.appendChild(divRow);
-                    getProductosAsync().then(productos => {
-                        productos.filter(oProducto => oProducto.id_linea == oLinea.id).forEach(oProducto => {
-                            let cardCol = document.createElement("div");
-                            cardCol.classList = "col mb-3 p-0";
-                            cardCol.innerHTML = `<div class="card">
-                            <img src="${oProducto.imagen}" class="card-img-top" alt="producto">
-                            <div class="card-body">
-                              <h6 class="card-title">${oProducto.nombre}</h6>
-                              <h6>$${oProducto.precio}</h6>
-                              <p class="card-text ">${oProducto.descripcion}</p>
-                              <button type="button" data-producto="${oProducto.id}" class="btn btn-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="setValuesModal(this);">
-                                <a href="#" class="text-light" id="añadirPedido">Añadir al carrito</a>
-                              </button>
-                            </div>`
-                            divRow.appendChild(cardCol);
-                        });
-                    });
-                });
-            });
-        });
-    });  
-});
+// document.addEventListener("DOMContentLoaded", async function() {
+//     loadCarrito();
+// })
 
-function setValuesModal(obj){
-    let productoElegido = obj.dataset.producto;
-    $('#hid-producto').val(productoElegido);
-    $('#cantidadUnidades').val("");
-
-    $("#añadirAlCarrito").css("display", "block");
-    $("#editarCarrito").css("display", "none");
-}
-
-
-// Storage y carrito
-$('#añadirAlCarrito').click(function (){
-    let carrito = getCarrito();
-    let itemCarrito = {};
-    let idProducto = $('#hid-producto').val();
-    let cantidadPedida = $('#cantidadUnidades').val();
-    itemCarrito.producto = idProducto;
-    itemCarrito.cantidad = cantidadPedida;
-    if (carrito.find(x => x.producto == idProducto)) {
-        showModalMensajes("Error", 'El producto ya existe en el carrito');
-    }
-    else {
-        if (cantidadPedida > 0 && cantidadPedida <= 100){
-            carrito.push(itemCarrito);
-            localStorage.setItem("cartItems", JSON.stringify(carrito));
-            $("#staticBackdrop").modal('hide');
-            showModalMensajes("Éxito", 'El producto ha sido agregado al carrito exitosamente');
-        }
-        else {
-            showModalMensajes("Error", 'Ingrese una cantidad válida');
-        }
-    }
-});
-
-function showModalMensajes(titulo, mensaje) {    
-    $("#tituloModal").text(titulo);
-    $("#mensajeModal").text(mensaje);
-    $("#modalMensajes").modal('toggle');
-}
 
 function getCarrito() {
     let carrito = localStorage.getItem("cartItems");
@@ -137,7 +58,7 @@ function loadCarrito() {
                                 <img src="${producto.imagen}" height="100" width="100" alt="producto-${producto.id}">
                                 <p>${producto.nombre}</p>
                             </div>
-                            <div class="row col">
+                            <div class="row col-8">
                                 <div class="col-3" style="text-align: center;margin-top: 80px;">$${producto.precio}</div>
                                 <div class="col-3" style="text-align: center;margin-top: 80px;">${itemCarrito.cantidad}</div>
                                 <div class="col-6" style="text-align: center;margin-top: 75px;">
@@ -181,6 +102,73 @@ function loadCarrito() {
     }
 }
 
+function finalizarPedido() {    
+    let isCompleted = validarPedido();
+    if (isCompleted) {
+        let checkDatosCorrectos = $("#gridCheck").is(":checked");
+        let carrito = getCarrito(); 
+        if (carrito.length > 0){ 
+            if (!checkDatosCorrectos) {        
+                showModalMensajes("Error", "Debe confirmar que los datos ingresados son correctos.");
+            }
+            else {
+                let pedidos = getPedidos();
+                let pedido = {
+                    orden: Math.floor(Math.random() * (max - min)) + min,
+                    nombre: $("#inputName").val(),
+                    mail: $("#inputEmail").val(),
+                    telefono: $("#inputPhone").val(),
+                    direccion: $("#inputAddress").val(),
+                    codigoPostal: $("#inputZip").val(),
+                    medioDePago: $("#inputMedioDePago").find(":selected").val(),
+                    carrito: getCarrito()
+                };
+                showModalMensajes("Orden "+"#"+ pedido.orden,"Su pedido ha sido ingresado con éxito, pronto nos comunicaremos con usted. ¡Gracias por su compra!");
+                pedidos.push(pedido);
+                localStorage.setItem("pedidos", JSON.stringify(pedidos));
+                let carrito = [];
+                localStorage.setItem("cartItems", JSON.stringify(carrito));
+            }
+        }
+        else {
+            showModalMensajes("Error", "No hay items en el carrito");
+        }
+    } 
+    else {
+        showModalMensajes("Error", "Falta completar campos obligatorios para finalizar el pedido");
+    }
+}
+
+
+function validarPedido(){
+    let esValido = true;
+    esValido = $("#inputName").val() != "" && esValido;
+    esValido = $("#inputEmail").val() != "" && esValido;
+    esValido = $("#inputPhone").val() != "" && esValido;
+    esValido = $("#inputAddress").val() != "" && esValido;
+    esValido = $("#inputZip").val() != "" && esValido;
+    let medioDePagoSelected = $("#inputMedioDePago").find(":selected");
+    esValido = medioDePagoSelected != null && medioDePagoSelected != undefined  && esValido;
+    return esValido;
+}
+
+function showModalMensajes(titulo, mensaje) {    
+    $("#tituloModal").text(titulo);
+    $("#mensajeModal").text(mensaje);
+    $("#modalMensajes").modal('toggle');
+}
+
+
+
+function getPedidos() {
+    let pedidos = localStorage.getItem("pedidos");
+    if (pedidos == null || pedidos == undefined)
+        pedidos = [];
+    else
+        pedidos = JSON.parse(pedidos);
+    return pedidos;
+}
+
 function deleteProducto(obj) {
     let idProducto = obj.dataset.producto;
     let carrito = getCarrito();
@@ -198,13 +186,13 @@ function editProducto(obj) {
     $("#añadirAlCarrito").css("display", "none");
     $("#editarCarrito").css("display", "block");
     $('#hid-producto').val(idProducto);
-    $('#cantidadUnidades').val(item.cantidad);
+    $('#unidades').val(item.cantidad);
 }
 
 $('#editarCarrito').click(function (){
     let carrito = getCarrito();
     let idProducto = $('#hid-producto').val();
-    let cantidadPedida = $('#cantidadUnidades').val();
+    let cantidadPedida = $('#unidades').val();
     let item = carrito.find(x => x.producto == idProducto);
     if (item != null && item != undefined) {
         for (const obj of carrito) {
@@ -222,7 +210,3 @@ $('#editarCarrito').click(function (){
         showModalMensajes("Error", 'El producto no existe en el carrito');
     }
 });
-
-
-
-

@@ -1,6 +1,7 @@
 [
     {"id": 1, "descripcion": "Panificados"},
-    {"id": 2, "descripcion": "Dulces"}, 
-    {"id": 3, "descripcion": "Fríos"}, 
-    {"id": 4, "descripcion": "Snacks"}
+    {"id": 2, "descripcion": "Rapiditas y tortillas"},
+    {"id": 3, "descripcion": "Dulces"}, 
+    {"id": 4, "descripcion": "Frío"}, 
+    {"id": 5, "descripcion": "Snacks"}
 ]

@@ -3,10 +3,13 @@
     {"id": 2, "descripcion": "Blancos", "id_categoria": 1},
     {"id": 3, "descripcion": "Salvados", "id_categoria": 1},
     {"id": 4, "descripcion": "Integrales", "id_categoria": 1},
-    {"id": 5, "descripcion": "Pancho y Hamburguesa", "id_categoria":1},
-    {"id": 6, "descripcion": "Madalenas", "id_categoria": 2},
-    {"id": 7, "descripcion": "Budines", "id_categoria": 2},
-    {"id": 8, "descripcion": "Vainillas", "id_categoria": 2},
-    {"id": 9, "descripcion": "Tapas para empanadas", "id_categoria": 3},
-    {"id": 10, "descripcion": "Pascualina", "id_categoria": 3}
+    {"id": 5, "descripcion": "Con semillas", "id_categoria":1},
+    {"id": 6, "descripcion": "Pancho y Hamburguesa", "id_categoria":1},
+    {"id": 7, "descripcion": "Rapiditas: Clásicas, Light e Integral & Tortillas Tía Rosa", "id_categoria":2},
+    {"id": 8, "descripcion": "Madalenas", "id_categoria": 3},
+    {"id": 9, "descripcion": "Budines", "id_categoria": 3},
+    {"id": 10, "descripcion": "Vainillas", "id_categoria": 3},
+    {"id": 11, "descripcion":"Tapas para empanadas y Pascualinas", "id_categoria":4},
+    {"id": 12, "descripcion": "Tostadas", "id_categoria": 5}
+
 ]

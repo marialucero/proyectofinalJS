@@ -1,17 +1,73 @@
 [
-    {"id":1, "nombre": "Artesano Semillas 400g", "descripcion": "Pan Blanco con Semillas de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/artesano400g.png", "precio": 138.90, "id_categoria": 1, "id_linea": 1},
-    {"id":2, "nombre": "Artesano Original 500g", "descripcion": "Pan Blanco de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/artesano500g.png", "precio": 137.10, "id_categoria": 1, "id_linea": 1},
-    {"id":3, "nombre": "Pan para Hamburguesa Artesano 240g", "descripcion": "Pan para Hamburguesa de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/hamburguesaartesano.png", "precio":82.10, "id_categoria": 1, "id_linea": 1},
-    {"id":4, "nombre": "Pan para Pancho Artesano 240g", "descripcion": "Pan para Pancho de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/panchoartesano.png", "precio":82.10, "id_categoria": 1, "id_linea": 1},
-    {"id":5, "nombre": "Hamburguesas Brioche Artesano 240g", "descripcion": "Pan para Hamburguesa de la línea Artesano Brioche de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/artesanobrioche.png", "precio":96.10, "id_categoria": 1, "id_linea": 1},
-    {"id":6, "nombre": "Fargo Lacteado 550g", "descripcion": "Pan Blanco Grande de la línea Lacteado de Fargo", "imagen": "../images/productos_accordion/productos/panificados/lacteadogrande.png", "precio": 0, "id_categoria": 1, "id_linea":2},
-    {"id":7, "nombre": "Fargo Lacteado 440g", "descripcion": "Pan Blanco Chico de la línea Lacteado de Fargo", "imagen": "../images/productos_accordion/productos/panificados/lacteadochico.png", "precio": 0, "id_categoria": 1, "id_linea":2},
-    {"id":8, "nombre": "Mesa Lactal 500g", "descripcion": "Pan Blanco Grande de la línea Mesa de Lactal", "imagen": "../images/productos_accordion/productos/panificados/mesalactalgrande.png", "precio": 0, "id_categoria": 1, "id_linea":2},
-    {"id":9, "nombre": "Mesa Lactal 300g", "descripcion": "Pan Blanco Chico de la línea Mesa de Lactal", "imagen": "../images/productos_accordion/productos/panificados/mesachicolactal.png", "precio": 0, "id_categoria": 1, "id_linea":2},
-    {"id":10, "nombre": "Mix Cereal 430g", "descripcion": "Pan Blanco Chico con Semillas de la línea Mix Cereal de Fargo", "imagen": "../images/productos_accordion/productos/panificados/mixcereal.png", "precio": 0, "id_categoria": 1, "id_linea":2},
-    {"id": 11, "nombre":"Salvado Plus 630g", "descripcion": "Pan Salvado de la línea Salvado Plus de Fargo", "imagen": "../images/productos_accordion/productos/panificados/salvadodoble.png","precio": 0, "id_categoria":1, "id_linea":3},
-    {"id":11, "nombre": "Pan Oroweat Cereales 600g", "descripcion": "Pan con Cereales de la línea Oroweat", "imagen": "../images/productos_accordion/productos/panificados/oroweatcereales.png", "precio":195.40, "id_categoria": 1, "id_linea": 4},
-    {"id":12, "nombre": "Pan Oroweat Semillas 600g", "descripcion": "Pan con Semillas de la línea Oroweat", "imagen": "../images/productos_accordion/productos/panificados/oroweatsemillas.png", "precio":195.40, "id_categoria": 1, "id_linea": 4}
+    {"id":1, "nombre": "Artesano Semillas 400g", "descripcion": "Pan Blanco con Semillas de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/artesano400g.png", "precio": 250, "id_categoria": 1, "id_linea": 1},
+    {"id":2, "nombre": "Artesano Original 500g", "descripcion": "Pan Blanco de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/artesano500g.png", "precio": 247, "id_categoria": 1, "id_linea": 1},
+    {"id":3, "nombre": "Pan para Hamburguesa Artesano 240g", "descripcion": "Pan para Hamburguesa de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/hamburguesaartesano.png", "precio": 148, "id_categoria": 1, "id_linea": 1},
+    {"id":4, "nombre": "Pan para Pancho Artesano 240g", "descripcion": "Pan para Pancho de la línea Artesano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/panchoartesano.png", "precio": 148, "id_categoria": 1, "id_linea": 1},
+    {"id":5, "nombre": "Hamburguesas Brioche Artesano 240g", "descripcion": "Pan para Hamburguesa de la línea Artesano Brioche de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/artesanobrioche.png", "precio": 150, "id_categoria": 1, "id_linea": 1},
+    {"id":6, "nombre": "Fargo Lacteado 550g", "descripcion": "Pan Blanco Grande de la línea Lacteado de Fargo", "imagen": "../images/productos_accordion/productos/panificados/lacteadogrande.png", "precio": 258, "id_categoria": 1, "id_linea":2},
+    {"id":7, "nombre": "Fargo Lacteado 440g", "descripcion": "Pan Blanco Chico de la línea Lacteado de Fargo", "imagen": "../images/productos_accordion/productos/panificados/lacteadochico.png", "precio": 199, "id_categoria": 1, "id_linea":2},
+    {"id":8, "nombre": "Mesa Lactal 500g", "descripcion": "Pan Blanco Grande de la línea Mesa de Lactal", "imagen": "../images/productos_accordion/productos/panificados/mesalactalgrande.png", "precio": 194, "id_categoria": 1, "id_linea":2},
+    {"id":9, "nombre": "Mesa Lactal 315g", "descripcion": "Pan Blanco Chico de la línea Mesa de Lactal", "imagen": "../images/productos_accordion/productos/panificados/mesachicolactal.png", "precio": 123, "id_categoria": 1, "id_linea":2},
+    {"id":10, "nombre": "Mix Cereal 430g", "descripcion": "Pan Blanco Chico con Semillas de la línea Mix Cereal de Fargo", "imagen": "../images/productos_accordion/productos/panificados/mixcereal.png", "precio": 246, "id_categoria": 1, "id_linea":5},
+    {"id":11, "nombre":"Salvado Plus 630g", "descripcion": "Pan Salvado de la línea Salvado Plus de Fargo", "imagen": "../images/productos_accordion/productos/panificados/salvadodoble.png","precio": 316, "id_categoria":1, "id_linea":3},
+    {"id":12, "nombre": "Pan Oroweat Cereales 600g", "descripcion": "Pan con Cereales de la línea Oroweat", "imagen": "../images/productos_accordion/productos/panificados/oroweatcereales.png", "precio": 351, "id_categoria": 1, "id_linea": 4},
+    {"id":13, "nombre": "Pan Oroweat Semillas 600g", "descripcion": "Pan con Semillas de la línea Oroweat", "imagen": "../images/productos_accordion/productos/panificados/oroweatsemillas.png", "precio":351, "id_categoria": 1, "id_linea": 4},
+    {"id":14, "nombre": "Pan Liviano Bimbo 550g", "descripcion": "Pan Blanco Liviano de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/livianoblancogrande.png", "precio": 249, "id_categoria": 1, "id_linea": 2},
+    {"id":15, "nombre": "Pan con Lino Bimbo 350g", "descripcion": "Pan con Semillas de Lino de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/linobimbochico.png", "precio": 215, "id_categoria": 1, "id_linea": 5},
+    {"id":16, "nombre": "Pan con Integral Bimbo 350g", "descripcion": "Pan Integral chico de Bimbo", "imagen": "../images/productos_accordion/productos/panificados/integralbimbochico.png", "precio": 193, "id_categoria": 1, "id_linea": 4},
+    {"id":17, "nombre": "Pan Salvado Lactal 600g", "descripcion": "Pan Salvado de Lactal", "imagen": "../images/productos_accordion/productos/panificados/salvadolactalgrande.png", "precio": 235, "id_categoria": 1, "id_linea": 3},
+    {"id":18, "nombre": "Pan para Panchos Fargo 210g", "descripcion": "Pan para panchos de Fargo. 6 unidades por paquete", "imagen": "../images/productos_accordion/productos/panificados/panchofargo.png", "precio": 112, "id_categoria": 1, "id_linea": 6},
+    {"id":19, "nombre": "Pan para Hamburguesas Fargo 210g", "descripcion": "Pan para hamburguesas de Fargo. 4 unidades por paquete ", "imagen": "../images/productos_accordion/productos/panificados/hamburguesafargo.png", "precio": 112, "id_categoria": 1, "id_linea": 6},
+    {"id":20, "nombre": "Pan para Panchos Lactal 210g", "descripcion": "Pan para panchos de Lactal. 6 unidades por paquete", "imagen": "../images/productos_accordion/productos/panificados/pancholactal.png", "precio": 92, "id_categoria": 1, "id_linea": 6},
+    {"id":21, "nombre": "Pan para Hamburguesas de Lactal 210g", "descripcion": "Pan para hamburguesas de Lactal. 4 unidades por paquete", "imagen": "../images/productos_accordion/productos/panificados/hamburguesalactal.png", "precio": 92, "id_categoria": 1, "id_linea": 6},
+    {"id":22, "nombre": "Pan para Panchos Acti Leche Bimbo 210g", "descripcion": "Pan para panchos de Bimbo. 6 unidades por paquete", "imagen": "../images/productos_accordion/productos/panificados/panchobimbo.png", "precio": 108, "id_categoria": 1, "id_linea": 6},
+    {"id":23, "nombre": "Pan para Hamburguesas Acti Leche Bimbo 210g", "descripcion": "Pan para hamburguesas de Bimbo. 4 unidades por paquete", "imagen": "../images/productos_accordion/productos/panificados/hamburguesabimbo.png", "precio": 108, "id_categoria": 1, "id_linea": 6},
+    {"id":24, "nombre": "Madalenas de Vainilla 200g", "descripcion": "Madalenas sin relleno sabor Vainilla de Bimbo, con envases individuales por unidad", "imagen": "../images/productos_accordion/productos/dulce/madalenasvainillas.png", "precio": 116, "id_categoria": 2, "id_linea": 8},
+    {"id":25, "nombre": "Madalenas Marmoladas 200g", "descripcion": "Madalenas sin relleno sabor Marmolado de Bimbo, con envases individuales por unidad", "imagen": "../images/productos_accordion/productos/dulce/madalenasmarmoladas.png", "precio": 116, "id_categoria": 2, "id_linea": 8},
+    {"id":26, "nombre": "Madalenas con Dulce de Leche 180g", "descripcion": "Madalenas sabor Vainilla con relleno de dulce de leche, con envases individuales por unidad.", "imagen": "../images/productos_accordion/productos/dulce/madalenasddl.png", "precio": 116, "id_categoria": 2, "id_linea": 8},
+    {"id":27, "nombre": "Madalenas de Chocolate con Dulce de Leche 180g", "descripcion": "Mandalenas sabor Chocolate con relleno de dulce de leche, con envases individuales por unidad.", "imagen": "../images/productos_accordion/productos/dulce/madalenaschocolate.png", "precio": 116, "id_categoria": 2, "id_linea": 8},
+    {"id":28, "nombre": "Budin sabor Vainilla 170g", "descripcion": "Budin sabor Vainilla de Bimbo", "imagen": "../images/productos_accordion/productos/dulce/budinvainilla.png", "precio": 170, "id_categoria": 2, "id_linea": 9},
+    {"id":29, "nombre": "Budin sabor Marmolado 170g", "descripcion": "Budin sabor Marmolado de Bimbo", "imagen": "../images/productos_accordion/productos/dulce/budinmarmolado.png", "precio": 170, "id_categoria": 2, "id_linea": 9},
+    {"id":30, "nombre": "Budin sabor Vainilla con Dulce de Leche 220g", "descripcion": "Budin sabor Vainilla con relleno de Dulce de Leche de Bimbo", "imagen": "../images/productos_accordion/productos/dulce/budinddl.png", "precio": 170, "id_categoria": 3, "id_linea": 9},
+    {"id":31, "nombre": "Budin sabor Vainilla con Chips de Chocolate 170g", "descripcion": "Budin sabor Vainilla con Chips de Chocolate de Bimbo", "imagen": "../images/productos_accordion/productos/dulce/budinchips.png", "precio": 170, "id_categoria": 3, "id_linea": 9},
+    {"id":32, "nombre": "Budin sabor Chocolate 170g", "descripcion": "Budin sabor Chocolate de Bimbo", "imagen": "../images/productos_accordion/productos/dulce/budinchocolate.png", "precio": 170, "id_categoria": 3, "id_linea": 9},
+    {"id":33, "nombre": "Vainillas 444g", "descripcion": "Vainillas grandes ", "imagen": "../images/productos_accordion/productos/dulce/vainillasgrandes.png", "precio": 223, "id_categoria": 3, "id_linea": 10},
+    {"id":34, "nombre": "Vainillas 148g", "descripcion": "Vainillas chicas ", "imagen": "../images/productos_accordion/productos/dulce/vainillaschicas.png", "precio": 79, "id_categoria": 3, "id_linea": 10},
+    {"id":35, "nombre": "Tapas Criollas para Empanadas 339g Fargo ", "descripcion": "Tapas criollas para empanadas de Fargo. 12 unidades con separadores por paquete", "imagen": "../images/productos_accordion/productos/frio/empanadascriollas.png", "precio": 105, "id_categoria":4, "id_linea":11},
+    {"id":36, "nombre": "Tapas de Hojaldre para Empanadas 339g Fargo ", "descripcion": "Tapas de hojaldre para empanadas de Fargo. 12 unidades con separadores por paquete", "imagen": "../images/productos_accordion/productos/frio/empanadashojaldre.png", "precio": 115, "id_categoria": 4, "id_linea":11},
+    {"id":37, "nombre": "Pascualina Criolla 390g Fargo ", "descripcion": "Pascualina criolla de Fargo. 2 unidades con separadores por paquete", "imagen": "../images/productos_accordion/productos/frio/tartacriolla.png", "precio": 115, "id_categoria": 4, "id_linea":11},
+    {"id":38, "nombre": "Pascualina de Hojaldre 390g Fargo ", "descripcion": "Pascualina de hojaldre de Fargo. 2 unidades con separadores por paquete", "imagen": "../images/productos_accordion/productos/frio/tartahojaldre.png", "precio": 115, "id_categoria": 4, "id_linea":11},
+    {"id":39, "nombre": "Tostadas de Arroz Breviss 150g ", "descripcion": "Tostadas de Arroz clásicas de Breviss SIN TACC", "imagen": "../images/productos_accordion/productos/snacks/tostadasarroz.png", "precio": 161, "id_categoria": 2, "id_linea": 12},
+    {"id":40, "nombre": "Tostadas Clásicas Breviss", "descripcion": "Tostadas clásicas de Breviss", "imagen": "../images/productos_accordion/productos/snacks/tostadasclasicas.png", "precio": 152, "id_categoria": 2, "id_linea": 12},
+    {"id":41, "nombre": "Tostadas Light Breviss", "descripcion": "Tostadas light de Breviss", "imagen": "../images/productos_accordion/productos/snacks/tostadaslight.png", "precio": 152, "id_categoria": 2, "id_linea": 12},
+    {"id":42, "nombre": "Doble Integral Fargo 320g", "descripcion": "Pan Integral de Fargo tamaño chico", "imagen": "../images/productos_accordion/productos/panificados/dobleintegral.png", "precio": 246, "id_categoria": 1, "id_linea": 4},
+    {"id":43, "nombre": "Rapiditas Clásicas 275g", "descripcion": "Rapiditas Clásicas 10 unidades por paquete de Bimbo", "imagen": "../images/productos_accordion/productos/snacks/rapiditasclasicas.png", "precio": 156, "id_categoria": 2, "id_linea": 7},
+    {"id":44, "nombre": "Rapiditas Light 275g", "descripcion": "Rapiditas Light 10 unidades por paquete de Bimbo", "imagen": "../images/productos_accordion/productos/snacks/rapiditaslight.png", "precio": 156, "id_categoria": 2, "id_linea": 7},
+    {"id":45, "nombre": "Rapiditas Integrales 265g", "descripcion": "Rapiditas Integrales 10 unidades por paquete de Bimbo", "imagen": "../images/productos_accordion/productos/snacks/rapiditasintegrales.png", "precio": 156, "id_categoria": 2, "id_linea": 7},
+    {"id":46, "nombre": "Tortillas Tía Rosa 320g", "descripcion": "Tortillas Tía Rosa 8 unidades por paquete ", "imagen": "../images/productos_accordion/productos/snacks/tiarosa.png", "precio": 166, "id_categoria": 2, "id_linea": 7}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]
 
 
